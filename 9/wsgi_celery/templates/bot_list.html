@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Bots List</h2>
+
+    <ul>
+        {% for bot in object_list %}
+            <li>{{ bot.email }} - {{ bot.password }}</li>
+        {% empty %}
+            <li>No bots. <a href="{% url 'generate' %}">Generate some random
+                bots.</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
